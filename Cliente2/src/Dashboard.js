@@ -1,3 +1,4 @@
+require ('dotenv').config()
 import {  useState, useEffect } from 'react'
 import useAuth from './useAuth'
 import TrackSearchResult from './TrackSearchResult'
@@ -6,8 +7,10 @@ import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import axios from "axios"
 
+
+
 const  spotifyApi = new SpotifyWebApi({
-    clientId:"a2ee83cbf075406b93baf7ddc472b347",
+    clientId:process.env.CLIENT_ID,
 })
 
 
@@ -29,7 +32,7 @@ export default function Dashboard ({ code }) {
     useEffect(() => {
         if (!playingTrack) return
 
-        axios.get('http://localhost:3001/lyrics', {
+        axios.get(`${process.env.REDIRECT_URI}/lyrics`, {
             params: {
                 track: playingTrack.title,
                 artist: playingTrack.artist

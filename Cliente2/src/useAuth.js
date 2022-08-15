@@ -10,7 +10,7 @@ export default function useAuth(code) {
 
     useEffect(() =>{
         axios
-            .post('http://localhost:3001/login',{
+            .post(`${process.env.REDIRECT_URI}/login`,{
                 code,
             })
             .then(res => {
@@ -29,7 +29,7 @@ export default function useAuth(code) {
         const interval = setInterval(() => {
 
             axios
-            .post('http://localhost:3001/refresh',{
+            .post(`${process.env.REDIRECT_URI}/refresh`,{
                 refreshToken,
             })
             .then(res => {
