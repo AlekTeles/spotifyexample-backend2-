@@ -16,9 +16,9 @@ mongoose.connect(process.env.CONNECTIONSTRING,
     app.emit('pronto');
   })
 
-const session = require('express-session')
-const MongoStore = require('connect-mongo');
-const flash = require('connect-flash');
+//const session = require('express-session')
+//const MongoStore = require('connect-mongo')
+//const flash = require('connect-flash');
 const app = express();
 app.use(cors())
 app.use(bodyParser.json())
