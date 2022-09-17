@@ -7,12 +7,7 @@ const SpotifyWebApi = require('spotify-web-api-node')
 const mongoose = require('mongoose');
 
 
-mongoose.connect(process.env.CONNECTIONSTRING,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-  })
+mongoose.connect(process.env.CONNECTIONSTRING)
   .then(() => {
     app.emit('pronto');
   })
