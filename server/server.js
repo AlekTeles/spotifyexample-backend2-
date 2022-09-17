@@ -5,6 +5,7 @@ const bodyParser= require('body-parser')
 const lyricsFinder = require('lyrics-finder')
 const SpotifyWebApi = require('spotify-web-api-node')
 const mongoose = require('mongoose');
+const session = require('express-session')
 
 mongoose.connect(process.env.CONNECTIONSTRING,
   {
@@ -16,9 +17,9 @@ mongoose.connect(process.env.CONNECTIONSTRING,
     app.emit('pronto');
   })
 
-//const session = require('express-session')
-//const MongoStore = require('connect-mongo')
-//const flash = require('connect-flash');
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+const flash = require('connect-flash');
 const app = express();
 app.use(cors())
 app.use(bodyParser.json())
