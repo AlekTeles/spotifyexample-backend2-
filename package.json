@@ -10,5 +10,8 @@
     "mongoose": "^6.5.2",
     "cors": "^2.8.5",
     "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
